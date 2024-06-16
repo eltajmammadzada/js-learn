@@ -59,3 +59,14 @@ console.log('task 6',propertyTaker({ continent: 'Asia', country: 'Japan'}, 'cont
 console.log('task 6',propertyTaker({ country: 'Sweden', continent: 'Europe'}, 'country'));
 console.log('task 6',propertyTaker({name:'ali', age:12}, 'name'));
 //task 7
+function existsAndTruthy(obj, propertyName) {
+  for (let key in obj) {
+      if (key === propertyName && obj[key]) {
+          return true;
+      }
+  }
+  return false;
+}
+console.log(existsAndTruthy({a:1,b:2,c:3},'b')); 
+console.log(existsAndTruthy({x:'a',y:null,z:'c'},'y'));
+console.log(existsAndTruthy({x:'a',b:'b',z:undefined},'z')); 
